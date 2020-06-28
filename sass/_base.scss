@@ -37,4 +37,20 @@ body {
 .container {
   display: grid;
   grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
+  grid-template-columns:
+    [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr)
+    [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end])
+    [center-end] minmax(6rem, 1fr) [full-end];
+  // 8rem is for sidebar
+  // 1140/8 = 142.5px rounded to 140px or 14rem
+  // minimum size = min-content, maximum size = 14rem
+  // 1fr & 1fr is like margin: 0 auto, it will center the 8 columns, min 60px max 1fr
+  // col-start you can access the individual columns by col-start 1, col-start 2, etc
+
+  // development
+  & > * {
+    // all direct children
+    padding: 40px;
+    font-size: 3rem;
+  }
 }
