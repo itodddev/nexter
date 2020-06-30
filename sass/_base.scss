@@ -48,9 +48,9 @@ body {
   // col-start you can access the individual columns by col-start 1, col-start 2, etc
 
   // development
-  & > * {
-    // all direct children
-    padding: 40px;
-    font-size: 3rem;
-  }
+  // & > * {
+  //   // all direct children
+  //   padding: 40px;
+  //   font-size: 3rem;
+  // }
 }
