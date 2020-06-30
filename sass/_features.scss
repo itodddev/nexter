@@ -3,6 +3,32 @@
 
   margin: 15rem 0;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  // grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(25rem, 1fr)
+  ); // responsive without media query, auto-fit will reduce the columns ans the space gets smaller, min 25rem
   grid-gap: 6rem;
+  align-items: start; // defaults to stretch, the two items on the right had less text so it looked off
+}
+
+.feature {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  grid-row-gap: 1.5rem;
+  grid-column-gap: 2.5rem;
+
+  &__icon {
+    fill: $color-primary;
+    width: 4.5rem;
+    height: 4.5rem;
+    grid-row: 1 / span 2; // can't use -1 because of implicit grid, because we didn't define the rows
+    transform: translateY(
+      -1rem
+    ); // move icon up to center more with heading-4 text
+  }
+
+  &__text {
+    font-size: 1.7rem;
+  }
 }
