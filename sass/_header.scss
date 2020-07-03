@@ -1,4 +1,37 @@
 .header {
   background-color: $color-grey-dark-1;
   grid-column: full-start / col-end 6;
+  background-image: linear-gradient(
+      rgba($color-secondary, 0.93),
+      rgba($color-secondary, 0.93)
+    ),
+    url(../img/hero.jpeg);
+  background-size: cover;
+  background-position: center;
+  padding: 4rem 8rem 8rem 8rem;
+
+  display: grid;
+  grid-template-rows: 1fr min-content 6rem 1fr; // main row takes up all available space, other items are implicitly placed after it
+  grid-template-columns: max-content; // grid-column is as wide as largest content
+  grid-row-gap: 1.5rem;
+  justify-content: center; // center grid in center of container
+
+  &__logo {
+    height: 3rem;
+    justify-self: center;
+  }
+
+  &__btn {
+    justify-self: start;
+    align-self: flex-start;
+  }
+
+  &__seenon-text {
+  }
+
+  &__seenon-logos {
+    img {
+      height: 2.5rem;
+    }
+  }
 }
