@@ -19,6 +19,14 @@
   grid-row-gap: 1.5rem;
   justify-content: center; // center grid in center of container
 
+  @media only screen and (max-width: $bp-medium) {
+    grid-column: 1 / -1; // header takes up whole page, bumps realtors down a row
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    padding: 5rem;
+  }
+
   &__logo {
     height: 3rem;
     justify-self: center;
