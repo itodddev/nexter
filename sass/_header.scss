@@ -11,8 +11,11 @@
   padding: 4rem 8rem 8rem 8rem;
 
   display: grid;
-  grid-template-rows: 1fr min-content 6rem 1fr; // main row takes up all available space, other items are implicitly placed after it
-  grid-template-columns: max-content; // grid-column is as wide as largest content
+  grid-template-rows: 1fr min-content minmax(6rem, min-content) 1fr; // main row takes up all available space, other items are implicitly placed after it, the minmax(6rem, mincontent) when size gets smaller it prevents overflow
+  grid-template-columns: minmax(
+    min-content,
+    max-content
+  ); // grid-column is as wide as largest content with max-content, changed to minmax so the as seen on images with be responsive
   grid-row-gap: 1.5rem;
   justify-content: center; // center grid in center of container
 
@@ -48,9 +51,11 @@
     grid-template-columns: repeat(4, 1fr);
     grid-column-gap: 3rem;
     justify-items: center;
+    align-items: center;
 
     img {
-      height: 2.5rem;
+      max-height: 2.5rem;
+      max-width: 100%; // both h&w set to max  for responsive
       filter: brightness(70%);
     }
   }
